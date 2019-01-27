@@ -1,28 +1,30 @@
 import 'package:flutter/material.dart';
 
-void main ()=> runApp(MyApp());
+void main() => runApp(MyApp(
+  items:new List<String>.generate(100, (i)=>"Item $i")
+));
 
-class MyApp extends StatelessWidget{
+class MyApp extends StatelessWidget {
+
+  final List<String> items;
+  MyApp({Key key,@required this.items}):super(key:key);
+
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Text widget',
+      title: 'welcom to flutter',
       home: Scaffold(
-        body: Center(
-          child: Text(
-            '建立国际的工地上分工带分工递归i够爱的双方各 个 供哦哦该 个 我人工我后我后我哄你 人工EHR个 自热火锅偶尔 高蓉蓉    人工我和org我如果该一而问题我二哥你几点发货',
-            textAlign: TextAlign.center,
-            //maxLines: 1,
-            overflow: TextOverflow.fade,
-            style: TextStyle(
-              fontSize: 25.0,
-              color: Color.fromARGB(255, 255, 125, 125),
-              decoration: TextDecoration.underline,
-              decorationStyle: TextDecorationStyle.dashed,
-              
-            ),
-          ),
+        appBar: AppBar(
+          title: new Text('Listview'),
         ),
+        body: new ListView.builder(
+          itemCount: items.length,
+          itemBuilder: (context,index){
+            return new ListTile(
+              title: new Text('${items[index]}'),
+            );
+          },
+        )
       ),
     );
   }

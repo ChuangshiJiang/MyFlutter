@@ -1,4 +1,0 @@
-#Sun Jan 27 16:29:56 CST 2019
-base.0=/Users/jcs/Documents/02.GitProjects/MyFlutter/build/app/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
